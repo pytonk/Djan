@@ -1,2 +1,0 @@
-# Djan
-ProjectIt
