@@ -1,46 +1,10 @@
-I# Djan
-ProjectIt
-
 #for IT School
-
 
 from django.shortcuts import render
 
 def hello_view(request):
     message = "Hello it School, This is my final project :)"
     return render(request, 'hello_app/hello.html', {'message': message})
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Final Project</title>
-    <style>
-        body {
-            background-color: #f3f3f3;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 150px;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #007bff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        p {
-            font-size: 24px;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-    <h1>{{ message }}</h1>
-    <p>This page is a part of my final project for IT School.</p>
-</body>
-</html>
-
 
 from django.contrib import admin
 from django.urls import path
