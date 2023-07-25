@@ -1,16 +1,27 @@
 #for IT School
 
-from django.shortcuts import render
+pip install flask
 
-def hello_view(request):
-    message = "Hello it School, This is my final project :)"
-    return render(request, 'hello_app/hello.html', {'message': message})
+from flask import Flask, render_template
 
-from django.contrib import admin
-from django.urls import path
-from hello_app.views import hello_view
+app = Flask(__name__)
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('hello/', hello_view, name='hello'),
-]
+@app.route('/')
+def hello():
+    message = "Hello, this is my project."
+    return render_template('index.html', message=message)
+
+if __name__ == '__main__':
+    app.run()
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Project</title>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+</body>
+</html>
+
+python app.py
